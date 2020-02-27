@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 // import firebase
 import firebase from './firebaseApp';
 
+// import the cart
 import Cart from './Cart';
 
 class Inventory extends Component{
@@ -47,18 +48,23 @@ class Inventory extends Component{
 
         // set up cart for firebase
         this.state.cartRef.on('value', (response)=>{
+            // make empty array to set new state
             const stateToSet = [];
+            // capture the value of the response
             const dataFromDb = response.val();
 
+            // loop through the data, create object to put into firebase
             for(let key in dataFromDb){
                 const userItems = {
                     key: key,
                     item: dataFromDb[key],
                 }
 
+                // push the data object to the empty array
                 stateToSet.push(userItems);
             }
 
+            // change the state to the new data
             this.setState({
                 userCart: stateToSet,
             })
@@ -141,7 +147,7 @@ class Inventory extends Component{
     }
 
     // make a function to add items to the cart
-    addToCart = (specificItem) => {
+    handleAddToCart = (specificItem) => {
 
         // add to the database
         this.state.cartRef.push(specificItem);
@@ -165,7 +171,7 @@ class Inventory extends Component{
                                 return(
                                     <div key={index}>
                                         <h3>{currentItem.name}</h3>
-                                        <button onClick={()=>{this.addToCart(currentItem)}} className="addToCart" id={index}>add to cart.</button>
+                                        <button onClick={()=>{this.handleAddToCart(currentItem)}} className="addToCart" id={index}>add to cart.</button>
                                         <p>{currentItem.inventory}</p>
                                         <p>{currentItem.price}</p>
                                     </div>
