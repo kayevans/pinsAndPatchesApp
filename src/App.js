@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import './App.css';
 
 // import firebase
 import firebase from './firebaseApp';
@@ -6,7 +7,6 @@ import firebase from './firebaseApp';
 // import the other components
 import Header from './Header';
 import Inventory from './Inventory';
-import Cart from './Cart';
 
 
 class App extends Component {
@@ -15,7 +15,6 @@ class App extends Component {
       <div>
         <Header />
         <Inventory />
-        <Cart />
       </div>
     );
   }

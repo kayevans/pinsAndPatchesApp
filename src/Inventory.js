@@ -3,6 +3,8 @@ import React, { Component } from 'react';
 // import firebase
 import firebase from './firebaseApp';
 
+import Cart from './Cart';
+
 class Inventory extends Component{
 
     constructor(){
@@ -149,27 +151,32 @@ class Inventory extends Component{
     render(){
         return(
             <main className="inventory">
-                <h2>inventory:</h2>
-                <nav className="sideNav">
-                    <ul>
-                        <li><a href="#" onClick={this.handleShowAll}>All</a></li>
-                        <li><a href="#" onClick={this.handleShowPins}>Pins</a></li>
-                        <li><a href="#" onClick={this.handleShowPatches}>Patches</a></li>
-                    </ul>
-                </nav>
-                <section className="displayInventory">
-                    {this.state.inventoryToShow.map((currentItem, index)=>{
-                            return(
-                                <div key={index}>
-                                    <h3>{currentItem.name}</h3>
-                                    <button onClick={()=>{this.addToCart(currentItem)}} className="addToCart" id={index}>add to cart.</button>
-                                    <p>{currentItem.inventory}</p>
-                                    <p>{currentItem.price}</p>
-                                </div>
-                            )
-                        })
-                    }
-                </section>
+                <div>
+                    <h2>inventory:</h2>
+                    <nav className="sideNav">
+                        <ul>
+                            <li><a href="#" onClick={this.handleShowAll}>All</a></li>
+                            <li><a href="#" onClick={this.handleShowPins}>Pins</a></li>
+                            <li><a href="#" onClick={this.handleShowPatches}>Patches</a></li>
+                        </ul>
+                    </nav>
+                    <section className="displayInventory">
+                        {this.state.inventoryToShow.map((currentItem, index)=>{
+                                return(
+                                    <div key={index}>
+                                        <h3>{currentItem.name}</h3>
+                                        <button onClick={()=>{this.addToCart(currentItem)}} className="addToCart" id={index}>add to cart.</button>
+                                        <p>{currentItem.inventory}</p>
+                                        <p>{currentItem.price}</p>
+                                    </div>
+                                )
+                            })
+                        }
+                    </section>
+                </div>
+                <div>
+                    <Cart cart={this.state.userCart}/>
+                </div>
             </main>
         )
     }
