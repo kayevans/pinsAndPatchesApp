@@ -11,3 +11,34 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+
+/* MY STYLES */
+
+/* default styles */
+
+
+.flexContainer{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.sideNav{
+  width: 15%;
+}
+
+.sideNav ul{
+  list-style: none;
+}
+
+.displayInventory{
+  width: 80%;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+}
+
+
+

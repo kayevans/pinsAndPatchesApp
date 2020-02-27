@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 
 // import firebase
-import firebase from './firebaseApp';
+// import firebase from './firebaseApp';
 
 // import the other components
 import Header from './Header';

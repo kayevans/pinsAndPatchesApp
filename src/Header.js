@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
-// import firebase
-import firebase from './firebaseApp';
+// // import firebase
+// import firebase from './firebaseApp';
 
 class Header extends Component{
     render(){

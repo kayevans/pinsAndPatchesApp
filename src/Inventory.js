@@ -147,10 +147,21 @@ class Inventory extends Component{
     }
 
     // make a function to add items to the cart
-    handleAddToCart = (specificItem) => {
+    handleAddToCart = (specificItem, itemIndex) => {
 
         // add to the database
         this.state.cartRef.push(specificItem);
+
+        // make copy of array
+        let copyArray = [...this.state.inventoryToShow];
+
+        // change the inventory of the specific item
+        copyArray[itemIndex].inventory = copyArray[itemIndex].inventory - 1;
+
+        // set the inventory to the new array
+        this.setState({
+            inventoryToShow: copyArray,
+        })
     }
 
     
@@ -159,26 +170,28 @@ class Inventory extends Component{
             <main className="inventory">
                 <div>
                     <h2>inventory:</h2>
-                    <nav className="sideNav">
-                        <ul>
-                            <li><a href="#" onClick={this.handleShowAll}>All</a></li>
-                            <li><a href="#" onClick={this.handleShowPins}>Pins</a></li>
-                            <li><a href="#" onClick={this.handleShowPatches}>Patches</a></li>
-                        </ul>
-                    </nav>
-                    <section className="displayInventory">
-                        {this.state.inventoryToShow.map((currentItem, index)=>{
-                                return(
-                                    <div key={index}>
-                                        <h3>{currentItem.name}</h3>
-                                        <button onClick={()=>{this.handleAddToCart(currentItem)}} className="addToCart" id={index}>add to cart.</button>
-                                        <p>{currentItem.inventory}</p>
-                                        <p>{currentItem.price}</p>
-                                    </div>
-                                )
-                            })
-                        }
-                    </section>
+                    <div className="flexContainer">
+                        <nav className="sideNav">
+                            <ul>
+                                <li><button onClick={this.handleShowAll}>All</button></li>
+                                <li><button onClick={this.handleShowPins}>Pins</button></li>
+                                <li><button onClick={this.handleShowPatches}>Patches</button></li>
+                            </ul>
+                        </nav>
+                        <section className="displayInventory">
+                            {this.state.inventoryToShow.map((currentItem, index)=>{
+                                    return(
+                                        <div key={index}>
+                                            <h3>{currentItem.name}</h3>
+                                            <button onClick={()=>{this.handleAddToCart(currentItem, index)}} className="addToCart" id={index}>add to cart.</button>
+                                            <p>${currentItem.price}</p>
+                                            <p>{currentItem.inventory} available</p>
+                                        </div>
+                                    )
+                                })
+                            }
+                        </section>
+                    </div>
                 </div>
                 <div>
                     <Cart cart={this.state.userCart}/>
