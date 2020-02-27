@@ -10,6 +10,7 @@ class Inventory extends Component{
 
         this.state = {
             dbRef: firebase.database().ref(),
+            cartRef: firebase.database().ref('userCart'),
             inventoryToShow: [],
             userCart: [],
         }
@@ -40,6 +41,26 @@ class Inventory extends Component{
             this.setState({
                 inventoryToShow: stateToSet,
             })
+        })
+
+        // set up cart for firebase
+        this.state.cartRef.on('value', (response)=>{
+            const stateToSet = [];
+            const dataFromDb = response.val();
+
+            for(let key in dataFromDb){
+                const userItems = {
+                    key: key,
+                    item: dataFromDb[key],
+                }
+
+                stateToSet.push(userItems);
+            }
+
+            this.setState({
+                userCart: stateToSet,
+            })
+
         })
     }
 
@@ -117,8 +138,14 @@ class Inventory extends Component{
         })
     }
 
-    
+    // make a function to add items to the cart
+    addToCart = (specificItem) => {
 
+        // add to the database
+        this.state.cartRef.push(specificItem);
+    }
+
+    
     render(){
         return(
             <main className="inventory">
@@ -135,7 +162,7 @@ class Inventory extends Component{
                             return(
                                 <div key={index}>
                                     <h3>{currentItem.name}</h3>
-                                    <button className="addToCart">add to cart.</button>
+                                    <button onClick={()=>{this.addToCart(currentItem)}} className="addToCart" id={index}>add to cart.</button>
                                     <p>{currentItem.inventory}</p>
                                     <p>{currentItem.price}</p>
                                 </div>
