@@ -14,8 +14,10 @@ class Inventory extends Component{
         this.state = {
             dbRef: firebase.database().ref(),
             cartRef: firebase.database().ref('userCart'),
+            subtotalRef: firebase.database().ref('subTotal'),
             inventoryToShow: [],
             userCart: [],
+            subTotal: 0,
         }
     }
 
@@ -67,6 +69,25 @@ class Inventory extends Component{
             // change the state to the new data
             this.setState({
                 userCart: stateToSet,
+            })
+
+        })
+
+        // set up the price for firebase
+        this.state.subtotalRef.on('value', (response)=>{
+
+            // make 0 to set new state
+            let stateToSet = 0;
+
+            // capture the value of the response
+            const dataFromDb = response.val();
+
+            // make it equal to the value of subtotalref
+            stateToSet = dataFromDb;
+
+            // change the state to the new data
+            this.setState({
+                subTotal: stateToSet,
             })
 
         })
@@ -153,14 +174,23 @@ class Inventory extends Component{
         this.state.cartRef.push(specificItem);
 
         // make copy of array
-        let copyArray = [...this.state.inventoryToShow];
+        let updatedInventory = [...this.state.inventoryToShow];
 
         // change the inventory of the specific item
-        copyArray[itemIndex].inventory = copyArray[itemIndex].inventory - 1;
+        updatedInventory[itemIndex].inventory = updatedInventory[itemIndex].inventory - 1;
 
-        // set the inventory to the new array
+        // use this to update subtotal
+        let newSubtotal = this.state.subTotal;
+
+        // add the price of item selected
+        newSubtotal = newSubtotal + specificItem.price;
+
+        // add to the database
+        this.state.subtotalRef.set(newSubtotal);
+
+        // set the inventory to the new array and set the subtotal
         this.setState({
-            inventoryToShow: copyArray,
+            inventoryToShow: updatedInventory,
         })
     }
 
@@ -194,7 +224,10 @@ class Inventory extends Component{
                     </div>
                 </div>
                 <div>
-                    <Cart cart={this.state.userCart}/>
+                    <Cart 
+                        cart={this.state.userCart}
+                        subtotal={this.state.subTotal}
+                    />
                 </div>
             </main>
         )

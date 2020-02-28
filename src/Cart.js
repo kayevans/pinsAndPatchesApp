@@ -11,16 +11,28 @@ class Cart extends Component{
         this.state = {
             dbRef: firebase.database().ref(),
             cartRef: firebase.database().ref('userCart'),
+            subtotalRef: firebase.database().ref('subTotal'),
         }
     }
 
     // make function for removing items from cart
-    handleRemoveFromCart = (itemKey) => {
+    handleRemoveFromCart = (itemKey, item) => {
         // remove the items by the keys
         this.state.cartRef.child(itemKey).remove();
+
+        // use this to update subtotal
+        let newSubtotal = this.props.subtotal;
+
+        // subtract the price of item selected
+        newSubtotal = newSubtotal - item.item.price;
+
+        // add to the database
+        this.state.subtotalRef.set(newSubtotal);
+
     }
 
     render(){
+        // console.log(this.props.subtotal)
         return(
             <div className="cart">
                 <h3>YOUR CART:</h3>
@@ -29,12 +41,13 @@ class Cart extends Component{
                     return(
                         <div className="itemInCart" key={currentItem.key}>
                             <h4>{currentItem.item.name}</h4>
-                            <button onClick={()=>{this.handleRemoveFromCart(currentItem.key)}} className="removeFromCart">remove from cart.</button>
+                            <button onClick={()=>{this.handleRemoveFromCart(currentItem.key, currentItem)}} className="removeFromCart">remove from cart.</button>
                             <p>{currentItem.item.price}</p>
                         </div>
                     )
                 })
                 }
+                <h4>Your subtotal: ${this.props.subtotal}</h4>
             </div>
         )
     }
