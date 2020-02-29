@@ -185,7 +185,7 @@ class Inventory extends Component{
         // add the price of item selected
         newSubtotal = newSubtotal + specificItem.price;
 
-        // add to the database
+        // set the subtotal in the database
         this.state.subtotalRef.set(newSubtotal);
 
         // set the inventory to the new array and set the subtotal

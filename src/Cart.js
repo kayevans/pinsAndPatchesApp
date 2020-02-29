@@ -32,7 +32,6 @@ class Cart extends Component{
     }
 
     render(){
-        // console.log(this.props.subtotal)
         return(
             <div className="cart">
                 <h3>YOUR CART:</h3>
