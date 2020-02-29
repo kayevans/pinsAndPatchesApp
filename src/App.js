@@ -21,7 +21,6 @@ class App extends Component {
 
   // make function that will catch when the cart is pressed
   handleCartShown = (formState) =>{
-    console.log(formState);
 
     // catch in variable to make new state
     const newState = formState;
@@ -29,9 +28,6 @@ class App extends Component {
     // set new state to the variable
     this.setState({
       cartShown: newState,
-
-    }, ()=>{
-      console.log(this.state.cartShown);
     })
   }
 
@@ -40,7 +36,7 @@ class App extends Component {
     return (
       <div>
         <Header handleCartFunc = {this.handleCartShown} />
-        <Inventory />
+        <Inventory cartState = {this.state.cartShown} handleCartFunc = {this.handleCartShown}/>
       </div>
     );
   }

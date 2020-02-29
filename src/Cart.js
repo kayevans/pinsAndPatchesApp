@@ -31,9 +31,17 @@ class Cart extends Component{
 
     }
 
+    // make function for hiding cart
+    handleHideCart = () => {
+        // hide the cart by calling the parent function and make state false
+        this.props.cartFunc(false);
+    }
+    
+
     render(){
         return(
             <div className="cart">
+                <button onClick={this.handleHideCart} className="closeCart">close cart.</button>
                 <h3>YOUR CART:</h3>
                 <h4>{this.props.cart.length} item(s) in cart</h4>
                 {this.props.cart.map((currentItem)=>{

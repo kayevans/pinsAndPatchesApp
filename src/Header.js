@@ -14,7 +14,7 @@ class Header extends Component{
     }
 
     // make function to control when the handle cart func is called and setting state
-    handleCart = () => {
+    handleShowCart = () => {
 
         
         // make variable to set state
@@ -43,7 +43,7 @@ class Header extends Component{
         return(
             <header>
                 <nav>
-                    <button onClick={this.handleCart} className="showCart">show cart.</button>
+                    <button onClick={this.handleShowCart} className="showCart">show cart.</button>
                 </nav>
                 <h1>pins n' patches</h1>
             </header>

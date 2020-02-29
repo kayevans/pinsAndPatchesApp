@@ -224,10 +224,14 @@ class Inventory extends Component{
                     </div>
                 </div>
                 <div>
-                    <Cart 
+                    {
+                        this.props.cartState ? <Cart 
                         cart={this.state.userCart}
                         subtotal={this.state.subTotal}
-                    />
+                        cartFunc = {this.props.handleCartFunc}
+                        />
+                        : null
+                    }
                 </div>
             </main>
         )
