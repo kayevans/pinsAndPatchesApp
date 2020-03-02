@@ -199,11 +199,11 @@ class Inventory extends Component{
         return(
             <main className="inventory">
                 <div>
-                    <h2>inventory:</h2>
-                    <div className="flexContainer">
+                    <div className="flexContainer wrapper">
                         <nav className="sideNav">
+                            <h2>browse by:</h2>
                             <ul>
-                                <li><button onClick={this.handleShowAll}>All</button></li>
+                                <li><button onClick={this.handleShowAll}>All items</button></li>
                                 <li><button onClick={this.handleShowPins}>Pins</button></li>
                                 <li><button onClick={this.handleShowPatches}>Patches</button></li>
                             </ul>
@@ -211,11 +211,16 @@ class Inventory extends Component{
                         <section className="displayInventory">
                             {this.state.inventoryToShow.map((currentItem, index)=>{
                                     return(
-                                        <div key={index}>
+                                        <div key={index} className="inventoryItem">
+                                            <div className="imgCont">
+                                                <img src={currentItem.image} alt={currentItem.name}/>
+                                                <button onClick={()=>{this.handleAddToCart(currentItem, index)}} className="addToCart" id={index}>add to cart +</button>
+                                            </div>
                                             <h3>{currentItem.name}</h3>
-                                            <button onClick={()=>{this.handleAddToCart(currentItem, index)}} className="addToCart" id={index}>add to cart.</button>
-                                            <p>${currentItem.price}</p>
-                                            <p>{currentItem.inventory} available</p>
+                                            <div className="info">
+                                                <p>${currentItem.price} CAD</p>
+                                                <p className="inStock">{currentItem.inventory} available</p>
+                                            </div>
                                         </div>
                                     )
                                 })

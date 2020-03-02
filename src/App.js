@@ -7,6 +7,7 @@ import './App.css';
 // import the other components
 import Header from './Header';
 import Inventory from './Inventory';
+import Footer from './Footer';
 
 
 class App extends Component {
@@ -37,6 +38,7 @@ class App extends Component {
       <div>
         <Header handleCartFunc = {this.handleCartShown} />
         <Inventory cartState = {this.state.cartShown} handleCartFunc = {this.handleCartShown}/>
+        <Footer />
       </div>
     );
   }

@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faShoppingCart } from '@fortawesome/free-solid-svg-icons';
 
 // // import firebase
 // import firebase from './firebaseApp';
@@ -43,9 +45,15 @@ class Header extends Component{
         return(
             <header>
                 <nav>
-                    <button onClick={this.handleShowCart} className="showCart">show cart.</button>
+                    <div className="wrapper">
+                        <button onClick={this.handleShowCart} className="showCart">
+                            <FontAwesomeIcon icon={faShoppingCart}/>
+                        </button>
+                    </div>
                 </nav>
-                <h1>pins n' patches</h1>
+                <div className="wrapper">
+                    <h1>pins n' patches</h1>
+                </div>
             </header>
         )
     }
