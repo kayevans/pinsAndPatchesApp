@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "b4cc9d36c2c92afb92cbc5a167beaf41",
+    "revision": "09d5599f6c6e2bd06fda9e7c35d6d226",
     "url": "/pinsAndPatchesApp/index.html"
   },
   {
