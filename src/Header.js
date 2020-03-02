@@ -3,9 +3,6 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faShoppingCart } from '@fortawesome/free-solid-svg-icons';
 import logo from './mainLogo.png';
 
-// // import firebase
-// import firebase from './firebaseApp';
-
 class Header extends Component{
 
     constructor(){
@@ -49,14 +46,14 @@ class Header extends Component{
                     <div className="wrapper">
                         <div className="shoppingCart">
                             <button onClick={this.handleShowCart} className="showCart">
-                                <FontAwesomeIcon icon={faShoppingCart}/>
+                                <FontAwesomeIcon icon={faShoppingCart} aria-label="Show your shopping cart"/>
                             </button>
                             <p>{this.props.cart.length}</p>
                         </div>
                     </div>
                 </nav>
                 <div className="wrapper">
-                    <img src={logo} alt="Pins and Patches" aria-label="Pins and Patches"/>
+                    <img src={logo} alt="Pins and Patches" aria-label="Pins and Patches" title="Pins and Patches"/>
                 </div>
             </header>
         )

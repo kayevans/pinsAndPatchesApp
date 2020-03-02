@@ -469,8 +469,13 @@ footer{
     /* change the grid */
     .displayInventory{
       grid-template-columns: repeat(1, 1fr);
+      row-gap: 40px;
     }
-
+    
+    /* change image size */
+    .inventoryItem .imgCont{
+      height: 400px;
+    }
 
 }
 

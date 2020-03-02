@@ -69,6 +69,8 @@ class Inventory extends Component{
             // change the state to the new data
             this.setState({
                 userCart: stateToSet,
+
+                // then call parent function to send the cart to the parent
             }, ()=>{
                 this.props.handleUserCartFunc(this.state.userCart);
             })
@@ -78,14 +80,9 @@ class Inventory extends Component{
         // set up the price for firebase
         this.state.subtotalRef.on('value', (response)=>{
 
-            // make 0 to set new state
-            let stateToSet = 0;
-
+            // make variable to set new state
             // capture the value of the response
-            const dataFromDb = response.val();
-
-            // make it equal to the value of subtotalref
-            stateToSet = dataFromDb;
+            const stateToSet = response.val();
 
             // change the state to the new data
             this.setState({
@@ -181,20 +178,20 @@ class Inventory extends Component{
         // change the inventory of the specific item
         updatedInventory[itemIndex].inventory = updatedInventory[itemIndex].inventory - 1;
 
+        
+        // use this to update subtotal
+        let newSubtotal = this.state.subTotal;
+        
+        // add the price of item selected
+        newSubtotal = newSubtotal + specificItem.price;
+        
+        // set the subtotal in the database
+        this.state.subtotalRef.set(newSubtotal);
+        
         // set the inventory to the new array and set the subtotal
         this.setState({
             inventoryToShow: updatedInventory,
         })
-        
-        // use this to update subtotal
-        let newSubtotal = this.state.subTotal;
-
-        // add the price of item selected
-        newSubtotal = newSubtotal + specificItem.price;
-
-        // set the subtotal in the database
-        this.state.subtotalRef.set(newSubtotal);
-
     }
 
     

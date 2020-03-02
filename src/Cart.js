@@ -24,7 +24,6 @@ class Cart extends Component{
 
         // use this to update subtotal
         let newSubtotal = this.props.subtotal;
-        // console.log(newSubtotal);
 
         // subtract the price of item selected
         // fix it to two decimals and parse float it to mkae number again
@@ -43,12 +42,11 @@ class Cart extends Component{
     
 
     render(){
-        // console.log((this.props.subtotal).toFixed(2));
         return(
             <div className="cart">
                 <div className="wrapper">
                     <button onClick={this.handleHideCart} className="closeCart">
-                        <FontAwesomeIcon icon={faTimes} />
+                        <FontAwesomeIcon icon={faTimes} aria-label="Close the cart"/>
                     </button>
                     <h2>Your cart</h2>
                     <h4 className="amountInCart">{this.props.cart.length} item(s) in cart</h4>
@@ -62,7 +60,7 @@ class Cart extends Component{
                                     <h4>{currentItem.item.name}</h4>
                                     <p>${currentItem.item.price} CAD</p>
                                     <button onClick={()=>{this.handleRemoveFromCart(currentItem.key, currentItem)}} className="removeFromCart">
-                                        <FontAwesomeIcon icon={faTrash} />
+                                        <FontAwesomeIcon icon={faTrash} aria-label="Remove this item"/>
                                     </button>
                                 </div>
                             </div>
