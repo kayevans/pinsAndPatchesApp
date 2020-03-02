@@ -100,15 +100,19 @@ h3{
 
 /* default header styles */
 header{
-  background-color: rgb(78, 97, 62);
-  padding: 200px 0 180px;
+  /* background: rgb(78, 97, 62); */
+  background: linear-gradient(to bottom, rgba(78, 97, 62, 0.459), rgba(78, 97, 62, 0.644)), url(./dan-otis-OYFHT4X5isg-unsplash.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  padding: 180px 0 180px;
 }
 
 /* center the h1 */
-h1{
-  text-align: center;
-  color: white;
-  font-size: 7rem;
+
+header img{
+  width: 32%;
+  margin: 0 auto;
 }
 
 /* make the nav stick to top | add box shadow to seperate from bg */
@@ -128,6 +132,13 @@ header nav{
 header nav button{
   font-size: 1.8rem;
   color: rgb(61, 77, 48);
+  transition: all 0.5s ease;
+}
+
+/* add hover and focus */
+header nav button:hover,
+header nav button:focus{
+  color:rgb(190, 179, 161);
 }
 
 
@@ -138,10 +149,82 @@ header nav button{
   position: fixed;
   top: 0;
   right: 0;
-  width: 30%;
+  width: 40%;
   background-color: white;
   height: 100%;
   z-index: 20;
+  box-shadow: 2px 0px 10px 0px rgba(0, 0, 0, 0.521);
+  overflow-y: scroll;
+}
+
+/* flex the photo beside items */
+.itemInCart{
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 15px;
+  position: relative;
+}
+
+/* close cart styles */
+.closeCart{
+  font-size: 4rem;
+  padding: 20px 10px;
+  margin: 20px 0 10px;
+  color: rgb(61, 77, 48);
+  transition: all 0.5s ease;
+}
+
+/* hover and focus states */
+.closeCart:hover,
+.closeCart:focus{
+  color:rgb(190, 179, 161);
+}
+
+/* image container styles */
+.itemInCart .imgCont{
+  height: 200px;
+  width: 200px;
+  margin-right: 20px;
+}
+
+/* h2 styles */
+.cart h2{
+  text-align: center;
+  font-size: 2.8rem;
+}
+
+/* h4 styles */
+.cart h4{
+  font-size: 1.6rem;
+}
+
+/* amount of items in cart styles */
+.cart .amountInCart{
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+/* price styles | add border on top */
+.cart .price{
+  text-align: right;
+  border-top: 1px solid rgb(61, 77, 48);
+  padding-top: 20px;
+  margin: 30px 0 50px;
+}
+
+/* remove item from cart button */
+.removeFromCart{
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  font-size: 1.6rem;
+  color: rgb(88, 61, 55);
+}
+
+/* add hover and focus to the button */
+.removeFromCart:hover,
+.removeFromCart:focus{
+  color: rgb(161, 127, 120);
 }
 
 /*              SIDE NAV STYLES          */
@@ -158,10 +241,10 @@ header nav button{
 
 /* button styles */
 .sideNav button{
-  font-size: 1.4rem;
+  font-size: 1.6rem;
   padding: 5px 0;
   margin: 5px 0;
-  text-transform: uppercase;
+  text-transform: lowercase;
   transition: all 0.5s ease;
   font-style: italic;
 }

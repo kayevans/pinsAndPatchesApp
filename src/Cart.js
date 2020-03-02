@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faTimes } from '@fortawesome/free-solid-svg-icons';
+import { faTimes, faTrash } from '@fortawesome/free-solid-svg-icons';
 
 // import firebase
 import firebase from './firebaseApp';
@@ -43,23 +43,31 @@ class Cart extends Component{
     render(){
         return(
             <div className="cart">
-                <button onClick={this.handleHideCart} className="closeCart">
-                    <FontAwesomeIcon icon={faTimes} />
-                </button>
-                <h3>YOUR CART:</h3>
-                <h4>{this.props.cart.length} item(s) in cart</h4>
-                {this.props.cart.map((currentItem)=>{
-                    return(
-                        <div className="itemInCart" key={currentItem.key}>
-                            <img src={currentItem.item.image} alt={currentItem.item.name}/>
-                            <h4>{currentItem.item.name}</h4>
-                            <button onClick={()=>{this.handleRemoveFromCart(currentItem.key, currentItem)}} className="removeFromCart">remove from cart.</button>
-                            <p>{currentItem.item.price}</p>
-                        </div>
-                    )
-                })
-                }
-                <h4>Your total: ${(this.props.subtotal).toFixed(2)}</h4>
+                <div className="wrapper">
+                    <button onClick={this.handleHideCart} className="closeCart">
+                        <FontAwesomeIcon icon={faTimes} />
+                    </button>
+                    <h2>Your cart</h2>
+                    <h4 className="amountInCart">{this.props.cart.length} item(s) in cart</h4>
+                    {this.props.cart.map((currentItem)=>{
+                        return(
+                            <div className="itemInCart" key={currentItem.key}>
+                                <div className="imgCont">
+                                    <img src={currentItem.item.image} alt={currentItem.item.name}/>
+                                </div>
+                                <div className="written">
+                                    <h4>{currentItem.item.name}</h4>
+                                    <p>${currentItem.item.price} CAD</p>
+                                    <button onClick={()=>{this.handleRemoveFromCart(currentItem.key, currentItem)}} className="removeFromCart">
+                                        <FontAwesomeIcon icon={faTrash} />
+                                    </button>
+                                </div>
+                            </div>
+                        )
+                    })
+                    }
+                    <h4 className="price">Your total: ${(this.props.subtotal).toFixed(2)}</h4>
+                </div>
             </div>
         )
     }

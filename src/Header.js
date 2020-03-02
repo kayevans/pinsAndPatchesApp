@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faShoppingCart } from '@fortawesome/free-solid-svg-icons';
+import logo from './mainLogo.png';
 
 // // import firebase
 // import firebase from './firebaseApp';
@@ -52,7 +53,7 @@ class Header extends Component{
                     </div>
                 </nav>
                 <div className="wrapper">
-                    <h1>pins n' patches</h1>
+                    <img src={logo} alt="Pins and Patches" aria-label="Pins and Patches"/>
                 </div>
             </header>
         )
