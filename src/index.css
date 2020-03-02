@@ -95,6 +95,15 @@ h3{
   margin: 0 auto;
 }
 
+/* make images take up size of container */
+.imgCont img{
+  object-fit: cover;
+  height: 100%;
+  object-position: center;
+  width: 100%;
+}
+
+
 
 /*              HEADER STYLES              */
 
@@ -138,7 +147,7 @@ header nav button{
 /* add hover and focus */
 header nav button:hover,
 header nav button:focus{
-  color:rgb(190, 179, 161);
+  color:rgb(207, 200, 189);
 }
 
 /* make shopping cart relative */
@@ -155,7 +164,9 @@ header nav button:focus{
   display: inline-block;
   padding: 2px 8px;
   border-radius: 50%;
-  background-color: rgb(223, 215, 204);
+  color: rgb(88, 61, 55);
+  background-color: rgb(212, 178, 170);
+
 
 }
 
@@ -195,7 +206,7 @@ header nav button:focus{
 /* hover and focus states */
 .closeCart:hover,
 .closeCart:focus{
-  color:rgb(190, 179, 161);
+  color: rgb(207, 200, 189);
 }
 
 /* image container styles */
@@ -296,9 +307,9 @@ header nav button:focus{
 
 /* change width and make grid for items */
 .displayInventory{
-  width: 85%;
+  width: 83%;
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   column-gap: 20px;
   row-gap: 30px;
 }
@@ -313,15 +324,6 @@ header nav button:focus{
   height: 250px;
   position: relative;
 }
-
-/* make images take up size of container */
-.imgCont img{
-  object-fit: cover;
-  height: 100%;
-  object-position: center;
-  width: 100%;
-}
-
 
 /* make button relative to image, show up on hover */
 .imgCont button{
@@ -373,4 +375,102 @@ footer{
 }
 
 
+
+/*                      MEDIA QUERIES                */
+
+@media (max-width: 1024px){
+
+  /*          CART STYLES          */
+  /* make larger */
+  .cart{
+    width: 50%;
+  }
+
+  /*          HEADER STYLES        */
+
+  /* make larger */
+  header img{
+    width: 50%;
+  }
+
+
+  /*          SIDE NAV STYLES        */
+
+  /* flex the items in the  */
+  .sideNav{
+    margin-bottom: 40px;
+    width: 100%;
+  }
+
+  /*        INVENTORY STYLES       */
+
+  .inventory{
+    padding: 50px 0 80px;
+  }
+  /* flex the side bar and inventory */
+  .flexContainer{
+    flex-direction: column;
+  }
+
+  /* change width  */
+  .displayInventory{
+    width: 100%;
+  }
+
+}
+
+
+@media (max-width: 768px){
+
+  /*            CART STYLES                */
+
+  /* change size of the image */
+  .itemInCart .imgCont img{
+    height: 100px;
+    width: 100px;
+  }
+
+
+  /*            INVENTORY STYLES           */
+
+  /* change the grid */
+  .displayInventory{
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+}
+
+
+@media (max-width: 560px){
+
+  /*            HEADER STYLES        */
+
+  /* change padding */
+  header{
+    padding: 180px 0 140px;
+  }
+
+  /* make larger */
+  header img{
+    width: 80%;
+  }
+
+
+  /*            CART STYLES        */
+
+  /* make take up whole screen */
+  .cart{
+    width: 100%;
+    height: 100%;
+    box-shadow: none;
+  }
+
+  /*            INVENTORY STYLES       */
+    /* change the grid */
+    .displayInventory{
+      grid-template-columns: repeat(1, 1fr);
+    }
+
+
+}
 

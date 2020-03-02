@@ -181,6 +181,11 @@ class Inventory extends Component{
         // change the inventory of the specific item
         updatedInventory[itemIndex].inventory = updatedInventory[itemIndex].inventory - 1;
 
+        // set the inventory to the new array and set the subtotal
+        this.setState({
+            inventoryToShow: updatedInventory,
+        })
+        
         // use this to update subtotal
         let newSubtotal = this.state.subTotal;
 
@@ -190,10 +195,6 @@ class Inventory extends Component{
         // set the subtotal in the database
         this.state.subtotalRef.set(newSubtotal);
 
-        // set the inventory to the new array and set the subtotal
-        this.setState({
-            inventoryToShow: updatedInventory,
-        })
     }
 
     
