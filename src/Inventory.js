@@ -69,6 +69,8 @@ class Inventory extends Component{
             // change the state to the new data
             this.setState({
                 userCart: stateToSet,
+            }, ()=>{
+                this.props.handleUserCartFunc(this.state.userCart);
             })
 
         })

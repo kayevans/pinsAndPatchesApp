@@ -130,7 +130,7 @@ header nav{
 
 /* styles for the shopping cart button */
 header nav button{
-  font-size: 1.8rem;
+  font-size: 2.8rem;
   color: rgb(61, 77, 48);
   transition: all 0.5s ease;
 }
@@ -139,6 +139,24 @@ header nav button{
 header nav button:hover,
 header nav button:focus{
   color:rgb(190, 179, 161);
+}
+
+/* make shopping cart relative */
+.shoppingCart {
+  position: relative;
+}
+
+/* styles for the amount of items in the cart */
+.shoppingCart p{
+  position: absolute;
+  right: 15px;
+  font-size: 1rem;
+  bottom: -5px;
+  display: inline-block;
+  padding: 2px 8px;
+  border-radius: 50%;
+  background-color: rgb(223, 215, 204);
+
 }
 
 
@@ -182,9 +200,13 @@ header nav button:focus{
 
 /* image container styles */
 .itemInCart .imgCont{
+  margin-right: 20px;
+}
+
+/* make fixed height and width */
+.itemInCart .imgCont img{
   height: 200px;
   width: 200px;
-  margin-right: 20px;
 }
 
 /* h2 styles */
@@ -292,6 +314,15 @@ header nav button:focus{
   position: relative;
 }
 
+/* make images take up size of container */
+.imgCont img{
+  object-fit: cover;
+  height: 100%;
+  object-position: center;
+  width: 100%;
+}
+
+
 /* make button relative to image, show up on hover */
 .imgCont button{
   position: absolute;
@@ -312,13 +343,7 @@ header nav button:focus{
   display: block;
 }
 
-/* make images take up size of container */
-.imgCont img{
-  object-fit: cover;
-  height: 100%;
-  width: 100%;
-  object-position: center;
-}
+
 
 /* flex the price and the inventory amount beside each other */
 .info{

@@ -24,9 +24,11 @@ class Cart extends Component{
 
         // use this to update subtotal
         let newSubtotal = this.props.subtotal;
+        // console.log(newSubtotal);
 
         // subtract the price of item selected
-        newSubtotal = newSubtotal - item.item.price;
+        // fix it to two decimals and parse float it to mkae number again
+        newSubtotal = parseFloat((newSubtotal - item.item.price).toFixed(2));
 
         // add to the database
         this.state.subtotalRef.set(newSubtotal);
@@ -41,6 +43,7 @@ class Cart extends Component{
     
 
     render(){
+        // console.log((this.props.subtotal).toFixed(2));
         return(
             <div className="cart">
                 <div className="wrapper">

@@ -36,7 +36,7 @@ class Header extends Component{
         })
     }
 
-    // make function to send back to parent
+    // make function to send cart state back to parent
     sendToParent = (stateOfForm) => {
         // call the parent function
         this.props.handleCartFunc(stateOfForm);
@@ -47,9 +47,12 @@ class Header extends Component{
             <header>
                 <nav>
                     <div className="wrapper">
-                        <button onClick={this.handleShowCart} className="showCart">
-                            <FontAwesomeIcon icon={faShoppingCart}/>
-                        </button>
+                        <div className="shoppingCart">
+                            <button onClick={this.handleShowCart} className="showCart">
+                                <FontAwesomeIcon icon={faShoppingCart}/>
+                            </button>
+                            <p>{this.props.cart.length}</p>
+                        </div>
                     </div>
                 </nav>
                 <div className="wrapper">

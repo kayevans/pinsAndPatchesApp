@@ -17,6 +17,7 @@ class App extends Component {
 
     this.state = {
       cartShown: false,
+      cart: [],
     }
   }
 
@@ -32,12 +33,25 @@ class App extends Component {
     })
   }
 
+  // make a function that will save the cart to send to header
+  handleUserCart = (cart) => {
+
+    // catch in variable to make new state
+    const newState = cart;
+
+    // set new state to the variable
+    this.setState({
+      cart: newState,
+    })
+
+  }
+
 
   render(){
     return (
       <div>
-        <Header handleCartFunc = {this.handleCartShown} />
-        <Inventory cartState = {this.state.cartShown} handleCartFunc = {this.handleCartShown}/>
+        <Header cart = {this.state.cart} handleCartFunc = {this.handleCartShown} />
+        <Inventory cartState = {this.state.cartShown} handleCartFunc = {this.handleCartShown} handleUserCartFunc= {this.handleUserCart}/>
         <Footer />
       </div>
     );
