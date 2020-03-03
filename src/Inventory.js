@@ -221,6 +221,7 @@ class Inventory extends Component{
                                                 <p>${currentItem.price} CAD</p>
                                                 <p className="inStock">{currentItem.inventory} available</p>
                                             </div>
+                                            <button onClick={()=>{this.handleAddToCart(currentItem, index)}} className="addToCart mobile" id={index}>add to cart +</button>
                                         </div>
                                     )
                                 })

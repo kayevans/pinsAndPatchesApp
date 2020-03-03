@@ -325,23 +325,32 @@ header nav button:focus{
   position: relative;
 }
 
-/* make button relative to image, show up on hover */
-.imgCont button{
-  position: absolute;
-  bottom: 0;
-  right: 0;
+/* styles for the add to cart buttons */
+.addToCart{
   width: 100%;
   background-color: rgba(233, 217, 193, 0.842);
   color:  rgb(71, 60, 45);
   text-transform: uppercase;
   padding: 20px 0;
+}
+
+/* hide the second add to cart on desktop */
+.addToCart.mobile{
   display: none;
+}
+
+/* make button relative to image, show up on hover */
+.imgCont .addToCart{
+  display: none;
+  position: absolute;
+  bottom: 0;
+  right: 0;
 }
 
 
 /* show the button on hover */
-.inventoryItem .imgCont:hover button,
-.inventoryItem .imgCont:focus button{
+.inventoryItem .imgCont:hover .addToCart,
+.inventoryItem .imgCont:focus .addToCart{
   display: block;
 }
 
@@ -436,6 +445,18 @@ footer{
   /* change the grid */
   .displayInventory{
     grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* show the second add to cart on mobile */
+  .addToCart.addToCart.mobile{
+    display: block;
+    margin-top: 10px;
+  }
+
+  /* remove the button on hover */
+  .inventoryItem .imgCont:hover .addToCart,
+  .inventoryItem .imgCont:focus .addToCart{
+    display: none;
   }
 
 }
