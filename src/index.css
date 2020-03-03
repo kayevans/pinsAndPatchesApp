@@ -88,6 +88,31 @@ h3{
   font-size: 1.8rem;
 }
 
+/* all anchor tags */
+a{
+  text-decoration: none;
+  transition: all 0.5s ease;
+  display: inline-block;
+}
+
+/* styles for all buttons */
+.buttonStyles{
+  width: 100%;
+  background-color: rgba(233, 217, 193, 0.842);
+  color:  rgb(71, 60, 45);
+  text-transform: uppercase;
+  padding: 20px 0;
+}
+
+/* buy and mobile button focus and hover state */
+.buyButton:hover,
+.buyButton:focus,
+.mobile:hover,
+.mobile:focus{
+  background-color: rgba(247, 238, 224, 0.842);
+  color: rgb(145, 132, 115);
+}
+
 /* wrapper styles */
 .wrapper{
   max-width: 1200px;
@@ -242,7 +267,7 @@ header nav button:focus{
   text-align: right;
   border-top: 1px solid rgb(61, 77, 48);
   padding-top: 20px;
-  margin: 30px 0 50px;
+  margin: 30px 0 20px;
 }
 
 /* remove item from cart button */
@@ -258,6 +283,13 @@ header nav button:focus{
 .removeFromCart:hover,
 .removeFromCart:focus{
   color: rgb(161, 127, 120);
+}
+
+/* buy button styles */
+.buyButton{
+  text-align: center;
+  font-style: 2.4rem;
+  margin-bottom: 30px;
 }
 
 /*              SIDE NAV STYLES          */
@@ -325,18 +357,10 @@ header nav button:focus{
   position: relative;
 }
 
-/* styles for the add to cart buttons */
-.addToCart{
-  width: 100%;
-  background-color: rgba(233, 217, 193, 0.842);
-  color:  rgb(71, 60, 45);
-  text-transform: uppercase;
-  padding: 20px 0;
-}
-
 /* hide the second add to cart on desktop */
-.addToCart.mobile{
+.mobile{
   display: none;
+  transition: all 0.5s ease;
 }
 
 /* make button relative to image, show up on hover */
@@ -381,6 +405,17 @@ header nav button:focus{
 footer{
   padding: 20px 0;
   text-align: center;
+}
+
+/* edit the a tag in footer */
+footer a{
+  color: black;
+}
+
+/* add hover and focus states */
+footer a:hover,
+footer a:focus{
+  color: rgb(161, 127, 120);
 }
 
 

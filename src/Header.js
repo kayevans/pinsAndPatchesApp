@@ -45,7 +45,7 @@ class Header extends Component{
                 <nav>
                     <div className="wrapper">
                         <div className="shoppingCart">
-                            <button onClick={this.handleShowCart} className="showCart">
+                            <button onClick={this.handleShowCart} className="showCart" tabIndex="1">
                                 <FontAwesomeIcon icon={faShoppingCart} aria-label="Show your shopping cart"/>
                             </button>
                             <p>{this.props.cart.length}</p>

@@ -203,25 +203,25 @@ class Inventory extends Component{
                         <nav className="sideNav">
                             <h2>browse by:</h2>
                             <ul>
-                                <li><button onClick={this.handleShowAll}>All items</button></li>
-                                <li><button onClick={this.handleShowPins}>Pins</button></li>
-                                <li><button onClick={this.handleShowPatches}>Patches</button></li>
+                                <li><button onClick={this.handleShowAll} tabindex="3">All items</button></li>
+                                <li><button onClick={this.handleShowPins} tabindex="3">Pins</button></li>
+                                <li><button onClick={this.handleShowPatches} tabindex="3">Patches</button></li>
                             </ul>
                         </nav>
                         <section className="displayInventory">
                             {this.state.inventoryToShow.map((currentItem, index)=>{
                                     return(
                                         <div key={index} className="inventoryItem">
-                                            <div className="imgCont">
+                                            <div className="imgCont" tabindex="4">
                                                 <img src={currentItem.image} alt={currentItem.name}/>
-                                                <button onClick={()=>{this.handleAddToCart(currentItem, index)}} className="addToCart" id={index}>add to cart +</button>
+                                                <button onClick={()=>{this.handleAddToCart(currentItem, index)}} className="addToCart buttonStyles" id={index}>add to cart +</button>
                                             </div>
                                             <h3>{currentItem.name}</h3>
                                             <div className="info">
                                                 <p>${currentItem.price} CAD</p>
                                                 <p className="inStock">{currentItem.inventory} available</p>
                                             </div>
-                                            <button onClick={()=>{this.handleAddToCart(currentItem, index)}} className="addToCart mobile" id={index}>add to cart +</button>
+                                            <button onClick={()=>{this.handleAddToCart(currentItem, index)}} className="addToCart mobile buttonStyles" id={index}tabindex="4" >add to cart +</button>
                                         </div>
                                     )
                                 })
