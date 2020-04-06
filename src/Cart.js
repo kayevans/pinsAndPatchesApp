@@ -68,7 +68,8 @@ class Cart extends Component{
                     })
                     }
                     <h4 className="price">Your total: ${(this.props.subtotal).toFixed(2)}</h4>
-                    <a className="buyButton buttonStyles" href="https://www.etsy.com/ca/shop/RambleOnSupplyCo?ref=simple-shop-header-name&listing_id=724280711" tabindex="1" target="_blank">Buy now</a>
+                    {/* if the cart is empty, dont show the buy button */}
+                    {this.props.cart.length === 0 ? null : <a className="buyButton buttonStyles" href="https://www.etsy.com/ca/shop/RambleOnSupplyCo?ref=simple-shop-header-name&listing_id=724280711" tabindex="1" target="_blank">Buy now</a>}    
                 </div>
             </div>
         )
