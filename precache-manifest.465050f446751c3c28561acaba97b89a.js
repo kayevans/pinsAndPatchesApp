@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "5bf7af2660db459e5bdffd68e19b149e",
+    "revision": "5571375349454dd6233d46068c377440",
     "url": "/pinsAndPatchesApp/index.html"
   },
   {
@@ -8,7 +8,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/pinsAndPatchesApp/static/css/2.722a81c6.chunk.css"
   },
   {
-    "revision": "62353ec61b2172b8c65d",
+    "revision": "d3c834084b8cc0fb66e1",
     "url": "/pinsAndPatchesApp/static/css/main.67355c70.chunk.css"
   },
   {
@@ -20,8 +20,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/pinsAndPatchesApp/static/js/2.843dead6.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "62353ec61b2172b8c65d",
-    "url": "/pinsAndPatchesApp/static/js/main.a5cf0add.chunk.js"
+    "revision": "d3c834084b8cc0fb66e1",
+    "url": "/pinsAndPatchesApp/static/js/main.3f4e8ab8.chunk.js"
   },
   {
     "revision": "34d4a67949f76d206774",

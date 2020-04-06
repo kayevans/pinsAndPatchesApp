@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/pinsAndPatchesApp/static/css/main.67355c70.chunk.css",
-    "main.js": "/pinsAndPatchesApp/static/js/main.a5cf0add.chunk.js",
-    "main.js.map": "/pinsAndPatchesApp/static/js/main.a5cf0add.chunk.js.map",
+    "main.js": "/pinsAndPatchesApp/static/js/main.3f4e8ab8.chunk.js",
+    "main.js.map": "/pinsAndPatchesApp/static/js/main.3f4e8ab8.chunk.js.map",
     "runtime-main.js": "/pinsAndPatchesApp/static/js/runtime-main.e02ba560.js",
     "runtime-main.js.map": "/pinsAndPatchesApp/static/js/runtime-main.e02ba560.js.map",
     "static/css/2.722a81c6.chunk.css": "/pinsAndPatchesApp/static/css/2.722a81c6.chunk.css",
     "static/js/2.843dead6.chunk.js": "/pinsAndPatchesApp/static/js/2.843dead6.chunk.js",
     "static/js/2.843dead6.chunk.js.map": "/pinsAndPatchesApp/static/js/2.843dead6.chunk.js.map",
     "index.html": "/pinsAndPatchesApp/index.html",
-    "precache-manifest.81f6e7d71bfb52170446780888e69cea.js": "/pinsAndPatchesApp/precache-manifest.81f6e7d71bfb52170446780888e69cea.js",
+    "precache-manifest.465050f446751c3c28561acaba97b89a.js": "/pinsAndPatchesApp/precache-manifest.465050f446751c3c28561acaba97b89a.js",
     "service-worker.js": "/pinsAndPatchesApp/service-worker.js",
     "static/css/2.722a81c6.chunk.css.map": "/pinsAndPatchesApp/static/css/2.722a81c6.chunk.css.map",
     "static/css/main.67355c70.chunk.css.map": "/pinsAndPatchesApp/static/css/main.67355c70.chunk.css.map",
@@ -22,6 +22,6 @@
     "static/css/2.722a81c6.chunk.css",
     "static/js/2.843dead6.chunk.js",
     "static/css/main.67355c70.chunk.css",
-    "static/js/main.a5cf0add.chunk.js"
+    "static/js/main.3f4e8ab8.chunk.js"
   ]
 }
