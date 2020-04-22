@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faArrowUp } from '@fortawesome/free-solid-svg-icons';
 import './App.css';
 
 // import the other components
@@ -11,6 +13,9 @@ class App extends Component {
 
   constructor(){
     super();
+
+    // make top of page reference
+    this.topOfPage = React.createRef();
 
     this.state = {
       cartShown: false,
@@ -43,13 +48,22 @@ class App extends Component {
 
   }
 
+  // make a function that will scroll to the top of the page
+  handleScrollToTop = () => {
+    window.scrollTo(0, this.topOfPage.current.offsetTop);
+  }
+
 
   render(){
     return (
       <div>
-        <Header cart = {this.state.cart} handleCartFunc = {this.handleCartShown} />
+        <Header cart = {this.state.cart} handleCartFunc = {this.handleCartShown} ref={this.topOfPage}/>
         <Inventory cartState = {this.state.cartShown} handleCartFunc = {this.handleCartShown} handleUserCartFunc= {this.handleUserCart}/>
         <Footer />
+        {/* back to top button */}
+        <button className="backToTop" onClick = {this.handleScrollToTop} aria-label="Go to the top of page">
+          <FontAwesomeIcon icon={faArrowUp} aria-hidden="true"/>
+        </button>
       </div>
     );
   }

@@ -46,9 +46,10 @@ img{
   display: block;
 }
 
-/* add default font size */
+/* add default font size | initialize smooth scroll */
 html{
   font-size: 62.5%;
+  scroll-behavior: smooth;
 }
 
 /* remove the list styles */
@@ -108,7 +109,9 @@ a{
 .buyButton:hover,
 .buyButton:focus,
 .mobile:hover,
-.mobile:focus{
+.mobile:focus,
+.backToTop:hover,
+.backToTop:focus{
   background-color: rgba(247, 238, 224, 0.842);
   color: rgb(145, 132, 115);
 }
@@ -128,13 +131,29 @@ a{
   width: 100%;
 }
 
+/* scroll to top button */
+.backToTop{
+  font-size: 3rem;
+  position: fixed;
+  bottom: 20px;
+  right: 10%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 70px;
+  width: 70px;
+  background-color: rgba(233, 217, 193, 0.87);
+  color:  rgb(71, 60, 45);
+  border-radius: 50%;
+  transition: all 0.5s ease;
+}
+
 
 
 /*              HEADER STYLES              */
 
 /* default header styles */
 header{
-  /* background: rgb(78, 97, 62); */
   background: linear-gradient(to bottom, rgba(78, 97, 62, 0.459), rgba(78, 97, 62, 0.644)), url(./dan-otis-OYFHT4X5isg-unsplash.jpg);
   background-repeat: no-repeat;
   background-size: cover;

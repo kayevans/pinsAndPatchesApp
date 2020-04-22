@@ -45,8 +45,8 @@ class Cart extends Component{
         return(
             <div className="cart">
                 <div className="wrapper">
-                    <button onClick={this.handleHideCart} className="closeCart" tabindex="1">
-                        <FontAwesomeIcon icon={faTimes} aria-label="Close the cart"/>
+                    <button onClick={this.handleHideCart} className="closeCart" tabindex="1" aria-label="Close the cart">
+                        <FontAwesomeIcon icon={faTimes} aria-hidden="true"/>
                     </button>
                     <h2>Your cart</h2>
                     <h4 className="amountInCart">{this.props.cart.length} item(s) in cart</h4>
@@ -59,8 +59,8 @@ class Cart extends Component{
                                 <div className="written">
                                     <h4>{currentItem.item.name}</h4>
                                     <p>${currentItem.item.price} CAD</p>
-                                    <button onClick={()=>{this.handleRemoveFromCart(currentItem.key, currentItem)}} className="removeFromCart" tabindex="1">
-                                        <FontAwesomeIcon icon={faTrash} aria-label="Remove this item"/>
+                                    <button onClick={()=>{this.handleRemoveFromCart(currentItem.key, currentItem)}} className="removeFromCart" tabindex="1" aria-label="Remove this item">
+                                        <FontAwesomeIcon icon={faTrash} aria-hidden="true"/>
                                     </button>
                                 </div>
                             </div>
