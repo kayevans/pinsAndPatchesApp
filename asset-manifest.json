@@ -1,27 +1,27 @@
 {
   "files": {
-    "main.css": "/pinsAndPatchesApp/static/css/main.67355c70.chunk.css",
-    "main.js": "/pinsAndPatchesApp/static/js/main.3f4e8ab8.chunk.js",
-    "main.js.map": "/pinsAndPatchesApp/static/js/main.3f4e8ab8.chunk.js.map",
+    "main.css": "/pinsAndPatchesApp/static/css/main.f04520a7.chunk.css",
+    "main.js": "/pinsAndPatchesApp/static/js/main.d764881d.chunk.js",
+    "main.js.map": "/pinsAndPatchesApp/static/js/main.d764881d.chunk.js.map",
     "runtime-main.js": "/pinsAndPatchesApp/static/js/runtime-main.e02ba560.js",
     "runtime-main.js.map": "/pinsAndPatchesApp/static/js/runtime-main.e02ba560.js.map",
     "static/css/2.722a81c6.chunk.css": "/pinsAndPatchesApp/static/css/2.722a81c6.chunk.css",
-    "static/js/2.843dead6.chunk.js": "/pinsAndPatchesApp/static/js/2.843dead6.chunk.js",
-    "static/js/2.843dead6.chunk.js.map": "/pinsAndPatchesApp/static/js/2.843dead6.chunk.js.map",
+    "static/js/2.685dc446.chunk.js": "/pinsAndPatchesApp/static/js/2.685dc446.chunk.js",
+    "static/js/2.685dc446.chunk.js.map": "/pinsAndPatchesApp/static/js/2.685dc446.chunk.js.map",
     "index.html": "/pinsAndPatchesApp/index.html",
-    "precache-manifest.465050f446751c3c28561acaba97b89a.js": "/pinsAndPatchesApp/precache-manifest.465050f446751c3c28561acaba97b89a.js",
+    "precache-manifest.d209e6d701db2b1cdf1c33505235d775.js": "/pinsAndPatchesApp/precache-manifest.d209e6d701db2b1cdf1c33505235d775.js",
     "service-worker.js": "/pinsAndPatchesApp/service-worker.js",
     "static/css/2.722a81c6.chunk.css.map": "/pinsAndPatchesApp/static/css/2.722a81c6.chunk.css.map",
-    "static/css/main.67355c70.chunk.css.map": "/pinsAndPatchesApp/static/css/main.67355c70.chunk.css.map",
-    "static/js/2.843dead6.chunk.js.LICENSE.txt": "/pinsAndPatchesApp/static/js/2.843dead6.chunk.js.LICENSE.txt",
+    "static/css/main.f04520a7.chunk.css.map": "/pinsAndPatchesApp/static/css/main.f04520a7.chunk.css.map",
+    "static/js/2.685dc446.chunk.js.LICENSE.txt": "/pinsAndPatchesApp/static/js/2.685dc446.chunk.js.LICENSE.txt",
     "static/media/index.css": "/pinsAndPatchesApp/static/media/dan-otis-OYFHT4X5isg-unsplash.b60cab63.jpg",
     "static/media/font-awesome.min.css": "/pinsAndPatchesApp/static/media/fontawesome-webfont.fee66e71.woff"
   },
   "entrypoints": [
     "static/js/runtime-main.e02ba560.js",
     "static/css/2.722a81c6.chunk.css",
-    "static/js/2.843dead6.chunk.js",
-    "static/css/main.67355c70.chunk.css",
-    "static/js/main.3f4e8ab8.chunk.js"
+    "static/js/2.685dc446.chunk.js",
+    "static/css/main.f04520a7.chunk.css",
+    "static/js/main.d764881d.chunk.js"
   ]
 }
